@@ -6,7 +6,7 @@ export function TrustSection() {
   const { messages: m } = useLanguage();
 
   return (
-    <section className="relative z-10 border-y border-white/40 bg-white/50 py-14 backdrop-blur-xl sm:py-16">
+    <section className="relative z-10 border-y border-white/40 bg-white/60 py-14 backdrop-blur-md sm:py-16">
       <div className="container-page">
         <p className="text-center text-[11px] font-semibold uppercase tracking-[0.22em] text-ink-subtle sm:text-xs">
           {m.trust.line}

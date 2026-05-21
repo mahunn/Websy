@@ -4,7 +4,7 @@
 
 @layer base {
   html {
-    scroll-behavior: smooth;
+    scroll-behavior: auto;
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -39,9 +39,9 @@
 
   /* ── Glass system ── */
   .glass {
-    background: linear-gradient(135deg, rgba(255,255,255,0.70) 0%, rgba(255,255,255,0.45) 100%);
-    backdrop-filter: blur(20px) saturate(180%);
-    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    background: linear-gradient(135deg, rgba(255,255,255,0.78) 0%, rgba(255,255,255,0.55) 100%);
+    backdrop-filter: blur(12px) saturate(150%);
+    -webkit-backdrop-filter: blur(12px) saturate(150%);
     border: 1px solid rgba(255,255,255,0.60);
     box-shadow:
       0 8px 32px rgba(15,23,42,0.08),
@@ -49,9 +49,9 @@
   }
 
   .glass-card {
-    background: linear-gradient(135deg, rgba(255,255,255,0.62) 0%, rgba(255,255,255,0.38) 100%);
-    backdrop-filter: blur(16px) saturate(160%);
-    -webkit-backdrop-filter: blur(16px) saturate(160%);
+    background: linear-gradient(135deg, rgba(255,255,255,0.72) 0%, rgba(255,255,255,0.48) 100%);
+    backdrop-filter: blur(10px) saturate(140%);
+    -webkit-backdrop-filter: blur(10px) saturate(140%);
     border: 1px solid rgba(255,255,255,0.52);
     box-shadow:
       0 4px 20px rgba(15,23,42,0.07),
@@ -59,9 +59,9 @@
   }
 
   .glass-strong {
-    background: rgba(255,255,255,0.82);
-    backdrop-filter: blur(28px) saturate(200%);
-    -webkit-backdrop-filter: blur(28px) saturate(200%);
+    background: rgba(255,255,255,0.88);
+    backdrop-filter: blur(14px) saturate(160%);
+    -webkit-backdrop-filter: blur(14px) saturate(160%);
     border: 1px solid rgba(255,255,255,0.70);
     box-shadow:
       0 8px 40px rgba(15,23,42,0.10),
@@ -131,10 +131,75 @@
     @apply inline-flex items-center gap-1.5 text-sm font-semibold text-brand transition-colors hover:text-brand-hover;
   }
 
-  /* ── Patterns ── */
-  .dot-pattern {
-    background-image: radial-gradient(rgba(15,23,42,0.07) 1px, transparent 1px);
-    background-size: 22px 22px;
+  /* ── Site background — shifting red / blue / blend gradient ── */
+  .site-bg {
+    @apply pointer-events-none fixed inset-0 -z-10 overflow-hidden;
+    contain: strict;
+  }
+
+  .site-bg__gradient {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      130deg,
+      #d6e8f8,
+      #f5d4e0,
+      #ddd0f5,
+      #c8dff5,
+      #f0c8d6,
+      #b8d4f5,
+      #e8d0f0,
+      #d6e8f8
+    );
+    background-size: 360% 360%;
+    animation: site-gradient-flow 22s ease-in-out infinite;
+  }
+
+  .site-bg__blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(48px);
+    animation: site-bg-drift 20s ease-in-out infinite;
+  }
+
+  .site-bg__blob--1 {
+    top: -10%;
+    left: -8%;
+    width: min(75vw, 560px);
+    height: min(75vw, 560px);
+    background: radial-gradient(circle, rgba(225, 29, 29, 0.24) 0%, transparent 65%);
+    animation-delay: 0s;
+  }
+
+  .site-bg__blob--2 {
+    top: 28%;
+    right: -12%;
+    width: min(70vw, 520px);
+    height: min(70vw, 520px);
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.26) 0%, transparent 65%);
+    animation-delay: -7s;
+  }
+
+  .site-bg__blob--3 {
+    bottom: -8%;
+    left: 20%;
+    width: min(65vw, 480px);
+    height: min(65vw, 480px);
+    background: radial-gradient(circle, rgba(139, 92, 246, 0.2) 0%, transparent 65%);
+    animation-delay: -14s;
+  }
+
+  @media (max-width: 768px) {
+    .glass,
+    .glass-card,
+    .glass-strong {
+      backdrop-filter: blur(8px) saturate(130%);
+      -webkit-backdrop-filter: blur(8px) saturate(130%);
+    }
+
+    .site-bg__blob {
+      filter: blur(32px);
+    }
   }
 
   .paper-grid {
@@ -145,52 +210,18 @@
   }
 }
 
-@keyframes gradient-shift {
-  0% { background-position: 0% 0%; }
-  20% { background-position: 100% 50%; }
-  40% { background-position: 50% 100%; }
-  60% { background-position: 0% 80%; }
-  80% { background-position: 80% 0%; }
-  100% { background-position: 0% 0%; }
+@keyframes site-gradient-flow {
+  0% { background-position: 0% 30%; }
+  25% { background-position: 80% 20%; }
+  50% { background-position: 100% 70%; }
+  75% { background-position: 20% 90%; }
+  100% { background-position: 0% 30%; }
 }
 
-.animate-gradient-shift {
-  animation: gradient-shift 8s ease infinite;
-}
-
-@keyframes blob-drift-1 {
+@keyframes site-bg-drift {
   0%, 100% { transform: translate(0, 0) scale(1); }
-  20% { transform: translate(80px, -60px) scale(1.15); }
-  40% { transform: translate(-50px, 80px) scale(0.9); }
-  60% { transform: translate(60px, 40px) scale(1.1); }
-  80% { transform: translate(-70px, -30px) scale(0.95); }
-}
-
-@keyframes blob-drift-2 {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  20% { transform: translate(-90px, 50px) scale(1.1); }
-  40% { transform: translate(70px, -70px) scale(0.92); }
-  60% { transform: translate(-40px, -60px) scale(1.12); }
-  80% { transform: translate(50px, 70px) scale(0.88); }
-}
-
-@keyframes blob-drift-3 {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  25% { transform: translate(60px, 90px) scale(1.18); }
-  50% { transform: translate(-80px, -40px) scale(0.85); }
-  75% { transform: translate(40px, -80px) scale(1.08); }
-}
-
-.animate-blob {
-  animation: blob-drift-1 10s ease-in-out infinite;
-}
-
-.animate-blob-delayed {
-  animation: blob-drift-2 12s ease-in-out infinite;
-}
-
-.animate-blob-slow {
-  animation: blob-drift-3 14s ease-in-out infinite;
+  33% { transform: translate(28px, -20px) scale(1.06); }
+  66% { transform: translate(-22px, 24px) scale(0.97); }
 }
 
 @keyframes highlight-reveal {

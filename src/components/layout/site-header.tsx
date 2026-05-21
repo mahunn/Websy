@@ -41,12 +41,12 @@ export function SiteHeader() {
           "rounded-2xl transition-all duration-300",
           scrolled
             ? [
-                "bg-white/75 backdrop-blur-2xl",
+                "bg-white/80 backdrop-blur-md",
                 "border border-white/70",
                 "shadow-[0_8px_32px_rgba(15,23,42,0.12),inset_0_1px_0_rgba(255,255,255,0.90)]",
               ].join(" ")
             : [
-                "bg-white/55 backdrop-blur-xl",
+                "bg-white/70 backdrop-blur-md",
                 "border border-white/55",
                 "shadow-[0_4px_24px_rgba(15,23,42,0.07),inset_0_1px_0_rgba(255,255,255,0.80)]",
               ].join(" ")
