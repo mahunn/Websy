@@ -144,11 +144,12 @@
       130deg,
       #d6e8f8,
       #f5d4e0,
-      #ddd0f5,
+      #d8c8f5,
       #c8dff5,
+      #e8d8f8,
       #f0c8d6,
       #b8d4f5,
-      #e8d0f0,
+      #cfc0f0,
       #d6e8f8
     );
     background-size: 360% 360%;
@@ -181,12 +182,58 @@
   }
 
   .site-bg__blob--3 {
-    bottom: -8%;
-    left: 20%;
-    width: min(65vw, 480px);
-    height: min(65vw, 480px);
-    background: radial-gradient(circle, rgba(139, 92, 246, 0.2) 0%, transparent 65%);
+    bottom: -5%;
+    left: 35%;
+    width: min(72vw, 540px);
+    height: min(72vw, 540px);
+    background: radial-gradient(circle, rgba(139, 92, 246, 0.28) 0%, transparent 62%);
     animation-delay: -14s;
+  }
+
+  /* ── Nav pill — frosted glass (see-through) + color tint overlay ── */
+  .nav-pill {
+    @apply relative overflow-hidden rounded-2xl border transition-all duration-300;
+    background: rgba(255, 255, 255, 0.45);
+    backdrop-filter: blur(20px) saturate(160%);
+    -webkit-backdrop-filter: blur(20px) saturate(160%);
+    border-color: rgba(255, 255, 255, 0.55);
+    box-shadow:
+      0 4px 24px rgba(15, 23, 42, 0.06),
+      inset 0 1px 0 rgba(255, 255, 255, 0.7);
+  }
+
+  .nav-pill__tint {
+    position: absolute;
+    inset: -30%;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.5;
+    background: linear-gradient(
+      130deg,
+      #d6e8f8,
+      #f5d4e0,
+      #d8c8f5,
+      #c8dff5,
+      #e8d8f8,
+      #f0c8d6,
+      #b8d4f5,
+      #cfc0f0,
+      #d6e8f8
+    );
+    background-size: 360% 360%;
+    animation: site-gradient-flow 22s ease-in-out infinite;
+  }
+
+  .nav-pill--scrolled {
+    background: rgba(255, 255, 255, 0.58);
+    border-color: rgba(255, 255, 255, 0.7);
+    box-shadow:
+      0 8px 32px rgba(15, 23, 42, 0.1),
+      inset 0 1px 0 rgba(255, 255, 255, 0.88);
+  }
+
+  .nav-pill__inner {
+    @apply relative z-[1];
   }
 
   @media (max-width: 768px) {
@@ -199,6 +246,11 @@
 
     .site-bg__blob {
       filter: blur(32px);
+    }
+
+    .nav-pill {
+      backdrop-filter: blur(14px) saturate(150%);
+      -webkit-backdrop-filter: blur(14px) saturate(150%);
     }
   }
 

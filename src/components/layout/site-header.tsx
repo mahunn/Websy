@@ -37,21 +37,12 @@ export function SiteHeader() {
       {/* ── Floating pill ── */}
       <div
         className={cn(
-          "pointer-events-auto w-full max-w-4xl",
-          "rounded-2xl transition-all duration-300",
-          scrolled
-            ? [
-                "bg-white/80 backdrop-blur-md",
-                "border border-white/70",
-                "shadow-[0_8px_32px_rgba(15,23,42,0.12),inset_0_1px_0_rgba(255,255,255,0.90)]",
-              ].join(" ")
-            : [
-                "bg-white/70 backdrop-blur-md",
-                "border border-white/55",
-                "shadow-[0_4px_24px_rgba(15,23,42,0.07),inset_0_1px_0_rgba(255,255,255,0.80)]",
-              ].join(" ")
+          "nav-pill pointer-events-auto w-full max-w-4xl",
+          scrolled && "nav-pill--scrolled"
         )}
       >
+        <div className="nav-pill__tint" aria-hidden />
+        <div className="nav-pill__inner">
         <div className="flex h-14 items-center gap-2 px-4 sm:px-5">
           {/* Logo */}
           <Logo compact className="shrink-0 mr-2" />
@@ -69,8 +60,8 @@ export function SiteHeader() {
                   className={cn(
                     "rounded-xl px-3 py-1.5 text-sm font-medium transition-all duration-150",
                     active
-                      ? "bg-white/80 text-ink shadow-sm border border-white/70"
-                      : "text-ink-muted hover:bg-white/60 hover:text-ink"
+                      ? "border border-white/60 bg-white/50 text-ink shadow-sm backdrop-blur-sm"
+                      : "text-ink-muted hover:bg-white/40 hover:text-ink backdrop-blur-sm"
                   )}
                 >
                   {link.label}
@@ -95,7 +86,7 @@ export function SiteHeader() {
             {/* Mobile hamburger */}
             <button
               type="button"
-              className="inline-flex h-8 w-8 items-center justify-center rounded-xl border border-white/60 bg-white/50 text-ink-muted backdrop-blur-sm transition-all hover:bg-white/75 hover:text-ink lg:hidden"
+              className="inline-flex h-8 w-8 items-center justify-center rounded-xl border border-white/50 bg-white/35 text-ink-muted backdrop-blur-sm transition-all hover:bg-white/55 hover:text-ink lg:hidden"
               aria-expanded={open}
               aria-label="Toggle menu"
               onClick={() => setOpen(!open)}
@@ -128,8 +119,8 @@ export function SiteHeader() {
                     className={cn(
                       "rounded-xl px-3 py-2.5 text-sm font-medium transition-colors",
                       active
-                        ? "bg-white/70 text-ink"
-                        : "text-ink-muted hover:bg-white/55 hover:text-ink"
+                        ? "bg-white/45 text-ink backdrop-blur-sm"
+                        : "text-ink-muted hover:bg-white/35 hover:text-ink"
                     )}
                     onClick={() => setOpen(false)}
                   >
@@ -145,6 +136,7 @@ export function SiteHeader() {
             </div>
           </div>
         )}
+        </div>
       </div>
     </div>
   );
