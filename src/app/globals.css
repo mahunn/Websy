@@ -1,0 +1,146 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  body {
+    @apply font-bengali antialiased overflow-x-hidden text-ink;
+    background-color: #F0F6FF;
+  }
+
+  ::selection {
+    background-color: rgba(225, 29, 29, 0.18);
+    color: #0F172A;
+  }
+}
+
+@layer components {
+  /* ── Layout ── */
+  .container-page {
+    @apply relative z-[1] mx-auto w-full max-w-6xl px-5 sm:px-6 lg:px-8;
+  }
+
+  .section-pad {
+    @apply py-20 sm:py-28;
+  }
+
+  /* ── Glass system ── */
+  .glass {
+    background: linear-gradient(135deg, rgba(255,255,255,0.70) 0%, rgba(255,255,255,0.45) 100%);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(255,255,255,0.60);
+    box-shadow:
+      0 8px 32px rgba(15,23,42,0.08),
+      inset 0 1px 0 rgba(255,255,255,0.80);
+  }
+
+  .glass-card {
+    background: linear-gradient(135deg, rgba(255,255,255,0.62) 0%, rgba(255,255,255,0.38) 100%);
+    backdrop-filter: blur(16px) saturate(160%);
+    -webkit-backdrop-filter: blur(16px) saturate(160%);
+    border: 1px solid rgba(255,255,255,0.52);
+    box-shadow:
+      0 4px 20px rgba(15,23,42,0.07),
+      inset 0 1px 0 rgba(255,255,255,0.70);
+  }
+
+  .glass-strong {
+    background: rgba(255,255,255,0.82);
+    backdrop-filter: blur(28px) saturate(200%);
+    -webkit-backdrop-filter: blur(28px) saturate(200%);
+    border: 1px solid rgba(255,255,255,0.70);
+    box-shadow:
+      0 8px 40px rgba(15,23,42,0.10),
+      inset 0 1px 0 rgba(255,255,255,0.90);
+  }
+
+  .glass-hover {
+    transition: all 0.3s ease;
+  }
+
+  .glass-hover:hover {
+    background: linear-gradient(135deg, rgba(255,255,255,0.80) 0%, rgba(255,255,255,0.55) 100%);
+    box-shadow:
+      0 12px 40px rgba(15,23,42,0.12),
+      inset 0 1px 0 rgba(255,255,255,0.90);
+    transform: translateY(-2px);
+  }
+
+  /* ── Legacy card (now glass) ── */
+  .card-ostad {
+    @apply glass rounded-2xl transition-all duration-300;
+  }
+
+  .card-ostad:hover {
+    background: linear-gradient(135deg, rgba(255,255,255,0.80) 0%, rgba(255,255,255,0.55) 100%);
+    box-shadow:
+      0 12px 40px rgba(15,23,42,0.12),
+      inset 0 1px 0 rgba(255,255,255,0.90);
+  }
+
+  .card-ostad-hover {
+    @apply hover:-translate-y-0.5;
+  }
+
+  /* ── Typography ── */
+  .eyebrow {
+    @apply text-[11px] font-semibold uppercase tracking-[0.18em] text-brand;
+  }
+
+  .headline {
+    @apply text-4xl font-bold tracking-tight text-ink sm:text-5xl lg:text-[3.25rem] lg:leading-[1.05];
+  }
+
+  .subhead {
+    @apply text-base font-normal leading-relaxed text-ink-muted sm:text-lg;
+  }
+
+  /* ── Badges ── */
+  .pastel-mint {
+    @apply rounded-full border border-emerald-200/70 bg-emerald-50/80 px-3 py-1 text-emerald-700;
+  }
+  .pastel-sky {
+    @apply rounded-full border border-sky-200/70 bg-sky-50/80 px-3 py-1 text-sky-700;
+  }
+  .pastel-coral {
+    @apply rounded-full border border-orange-200/70 bg-orange-50/80 px-3 py-1 text-orange-700;
+  }
+  .pastel-amber {
+    @apply rounded-full border border-red-200/70 bg-brand-soft/80 px-3 py-1 text-brand;
+  }
+
+  .badge-ostad {
+    @apply inline-flex items-center rounded-full px-2.5 py-1 text-[11px] font-medium tracking-wide;
+  }
+
+  .link-arrow {
+    @apply inline-flex items-center gap-1.5 text-sm font-semibold text-brand transition-colors hover:text-brand-hover;
+  }
+
+  /* ── Patterns ── */
+  .dot-pattern {
+    background-image: radial-gradient(rgba(15,23,42,0.07) 1px, transparent 1px);
+    background-size: 22px 22px;
+  }
+
+  .paper-grid {
+    background-image:
+      linear-gradient(rgba(15,23,42,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(15,23,42,0.04) 1px, transparent 1px);
+    background-size: 56px 56px;
+  }
+}
