@@ -39,10 +39,10 @@ export function TeamCard({ name }: TeamCardProps) {
       </div>
 
       {/* Info — glass tray at the bottom */}
-      <div className="p-5">
-        <h3 className="text-base font-semibold tracking-tight text-ink">{name}</h3>
-        <p className="mt-0.5 text-xs font-semibold text-brand">{member.role}</p>
-        <p className="mt-2 text-xs leading-relaxed text-ink-muted">{member.description}</p>
+      <div className="p-3 sm:p-5">
+        <h3 className="text-sm font-semibold tracking-tight text-ink sm:text-base">{name}</h3>
+        <p className="mt-0.5 text-[11px] font-semibold text-brand sm:text-xs">{member.role}</p>
+        <p className="mt-1.5 text-[11px] leading-relaxed text-ink-muted sm:text-xs">{member.description}</p>
       </div>
     </article>
   );

@@ -21,7 +21,7 @@ export function TeamShowcaseSection() {
             className="max-w-3xl"
           />
         </div>
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
+        <div className="grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-4 lg:gap-6">
           {teamMeta.map((member) => (
             <TeamCard key={member.name} name={member.name} />
           ))}

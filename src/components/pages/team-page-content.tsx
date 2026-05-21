@@ -19,7 +19,7 @@ export function TeamPageContent() {
       />
       <section className="section-pad relative z-10 bg-transparent">
         <div className="container-page">
-          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
+          <div className="grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-4 lg:gap-6">
             {teamMeta.map((member) => (
               <TeamCard key={member.name} name={member.name} />
             ))}
