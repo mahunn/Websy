@@ -1,18 +1,18 @@
 export function SiteBackground() {
   return (
     <div className="pointer-events-none fixed inset-0 -z-10 overflow-hidden" aria-hidden>
-      {/* Base */}
-      <div className="absolute inset-0 bg-[#F0F6FF]" />
+      {/* Animated gradient base */}
+      <div className="absolute inset-0 animate-gradient-shift bg-[length:400%_400%] bg-gradient-to-br from-[#E8F0FE] via-[#FDE8E8] via-[40%] to-[#EDE9FE]" />
 
-      {/* Large colour washes */}
-      <div className="absolute -top-40 -left-40 h-[700px] w-[700px] rounded-full bg-[radial-gradient(circle,rgba(225,29,29,0.18)_0%,transparent_70%)]" />
-      <div className="absolute top-[30%] -right-40 h-[600px] w-[600px] rounded-full bg-[radial-gradient(circle,rgba(56,189,248,0.20)_0%,transparent_70%)]" />
-      <div className="absolute top-[55%] left-[15%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle,rgba(245,158,11,0.14)_0%,transparent_70%)]" />
-      <div className="absolute bottom-0 right-[10%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle,rgba(139,92,246,0.14)_0%,transparent_70%)]" />
-      <div className="absolute bottom-[20%] -left-20 h-[400px] w-[400px] rounded-full bg-[radial-gradient(circle,rgba(16,185,129,0.12)_0%,transparent_70%)]" />
+      {/* Floating blobs — large, vivid, clearly moving */}
+      <div className="absolute -top-20 -left-20 h-[800px] w-[800px] animate-blob rounded-full bg-[radial-gradient(circle,rgba(225,29,29,0.22)_0%,transparent_65%)] blur-2xl" />
+      <div className="absolute top-[20%] -right-20 h-[750px] w-[750px] animate-blob-delayed rounded-full bg-[radial-gradient(circle,rgba(56,189,248,0.25)_0%,transparent_65%)] blur-2xl" />
+      <div className="absolute top-[50%] left-[10%] h-[650px] w-[650px] animate-blob-slow rounded-full bg-[radial-gradient(circle,rgba(245,158,11,0.20)_0%,transparent_65%)] blur-2xl" />
+      <div className="absolute bottom-[-5%] right-[5%] h-[700px] w-[700px] animate-blob rounded-full bg-[radial-gradient(circle,rgba(139,92,246,0.22)_0%,transparent_65%)] blur-2xl" />
+      <div className="absolute bottom-[15%] -left-10 h-[550px] w-[550px] animate-blob-delayed rounded-full bg-[radial-gradient(circle,rgba(16,185,129,0.18)_0%,transparent_65%)] blur-2xl" />
 
       {/* Fine dot grid */}
-      <div className="absolute inset-0 dot-pattern opacity-30" />
+      <div className="absolute inset-0 dot-pattern opacity-25" />
     </div>
   );
 }

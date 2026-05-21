@@ -33,6 +33,7 @@ export type Messages = {
   hero: {
     badge: string;
     title: string;
+    titleHighlight: string;
     subtext: string;
     ctaPrimary: string;
     ctaSecondary: string;

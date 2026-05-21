@@ -14,7 +14,6 @@ export function TeamShowcaseSection() {
       <div className="container-page">
         <div className="mb-14 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
           <SectionHeading
-            eyebrow={m.nav.about}
             title={m.team.homepageTitle}
             description={m.team.homepageDesc}
             align="left"

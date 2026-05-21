@@ -54,9 +54,7 @@ export function SiteHeader() {
       >
         <div className="flex h-14 items-center gap-2 px-4 sm:px-5">
           {/* Logo */}
-          <Link href="/" className="shrink-0 mr-2">
-            <Logo compact />
-          </Link>
+          <Logo compact className="shrink-0 mr-2" />
 
           {/* Desktop nav */}
           <nav className="hidden flex-1 items-center gap-0.5 lg:flex" aria-label="Main">
@@ -67,6 +65,7 @@ export function SiteHeader() {
                 <Link
                   key={link.href}
                   href={link.href}
+                  prefetch
                   className={cn(
                     "rounded-xl px-3 py-1.5 text-sm font-medium transition-all duration-150",
                     active
@@ -125,6 +124,7 @@ export function SiteHeader() {
                   <Link
                     key={link.href}
                     href={link.href}
+                    prefetch
                     className={cn(
                       "rounded-xl px-3 py-2.5 text-sm font-medium transition-colors",
                       active

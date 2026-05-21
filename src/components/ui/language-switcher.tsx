@@ -6,38 +6,41 @@ import { useLanguage } from "@/components/providers/language-provider";
 export function LanguageSwitcher({ className }: { className?: string }) {
   const { locale, setLocale, messages } = useLanguage();
 
-  const options = [
-    { code: "bn" as const, short: "বাং", full: "বাংলা" },
-    { code: "en" as const, short: "EN", full: "EN" }
-  ];
-
   return (
     <div
       className={cn(
-        "inline-flex items-center rounded-full border border-white/50 bg-white/55 p-0.5 backdrop-blur-md",
+        "inline-flex items-center rounded-full border border-white/50 bg-white/55 p-[3px] backdrop-blur-md",
         className
       )}
-      role="group"
+      role="radiogroup"
       aria-label={messages.lang.label}
     >
-      {options.map((opt) => (
-        <button
-          key={opt.code}
-          type="button"
-          onClick={() => setLocale(opt.code)}
-          className={cn(
-            "rounded-full px-2.5 py-1 text-[11px] font-medium transition-all duration-200 sm:px-3 sm:py-1",
-            locale === opt.code
-              ? "bg-ink text-paper-surface"
-              : "text-ink-subtle hover:text-ink"
-          )}
-          aria-pressed={locale === opt.code}
-          title={opt.full}
-        >
-          <span className="sm:hidden">{opt.short}</span>
-          <span className="hidden sm:inline">{opt.full}</span>
-        </button>
-      ))}
+      <button
+        type="button"
+        onClick={() => setLocale("en")}
+        className={cn(
+          "rounded-full px-2.5 py-1 text-[11px] font-semibold transition-all duration-200",
+          locale === "en"
+            ? "bg-ink text-white shadow-sm"
+            : "text-ink-subtle hover:text-ink"
+        )}
+        aria-pressed={locale === "en"}
+      >
+        EN
+      </button>
+      <button
+        type="button"
+        onClick={() => setLocale("bn")}
+        className={cn(
+          "rounded-full px-2.5 py-1 text-[11px] font-semibold transition-all duration-200",
+          locale === "bn"
+            ? "bg-ink text-white shadow-sm"
+            : "text-ink-subtle hover:text-ink"
+        )}
+        aria-pressed={locale === "bn"}
+      >
+        বাং
+      </button>
     </div>
   );
 }

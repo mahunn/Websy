@@ -14,53 +14,39 @@ type LanguageContextValue = {
 
 const LanguageContext = createContext<LanguageContextValue | null>(null);
 
-export function LanguageProvider({ children }: { children: React.ReactNode }) {
-  const [locale, setLocaleState] = useState<Locale>(defaultLocale);
-  const [ready, setReady] = useState(false);
-
-  useEffect(() => {
+function getInitialLocale(): Locale {
+  if (typeof window === "undefined") return defaultLocale;
+  try {
     const stored = localStorage.getItem(STORAGE_KEY) as Locale | null;
-    if (stored === "bn" || stored === "en") {
-      setLocaleState(stored);
-    }
-    setReady(true);
-  }, []);
+    if (stored === "bn" || stored === "en") return stored;
+  } catch {}
+  return defaultLocale;
+}
+
+export function LanguageProvider({ children }: { children: React.ReactNode }) {
+  const [locale, setLocaleState] = useState<Locale>(getInitialLocale);
 
   useEffect(() => {
-    if (!ready) return;
     document.documentElement.lang = locale;
-    localStorage.setItem(STORAGE_KEY, locale);
-  }, [locale, ready]);
+    try { localStorage.setItem(STORAGE_KEY, locale); } catch {}
+  }, [locale]);
 
-  const setLocale = useCallback((next: Locale) => {
-    setLocaleState(next);
-  }, []);
-
-  const toggleLocale = useCallback(() => {
-    setLocaleState((prev) => (prev === "bn" ? "en" : "bn"));
-  }, []);
-
-  const value = useMemo(
-    () => ({
-      locale,
-      messages: getMessages(locale),
-      setLocale,
-      toggleLocale
-    }),
-    [locale, setLocale, toggleLocale]
+  const setLocale = useCallback((next: Locale) => setLocaleState(next), []);
+  const toggleLocale = useCallback(
+    () => setLocaleState((prev) => (prev === "bn" ? "en" : "bn")),
+    []
   );
 
-  if (!ready) {
-    return <div className="min-h-screen bg-paper" />;
-  }
+  const value = useMemo(
+    () => ({ locale, messages: getMessages(locale), setLocale, toggleLocale }),
+    [locale, setLocale, toggleLocale]
+  );
 
   return <LanguageContext.Provider value={value}>{children}</LanguageContext.Provider>;
 }
 
 export function useLanguage() {
   const ctx = useContext(LanguageContext);
-  if (!ctx) {
-    throw new Error("useLanguage must be used within LanguageProvider");
-  }
+  if (!ctx) throw new Error("useLanguage must be used within LanguageProvider");
   return ctx;
 }
