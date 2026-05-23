@@ -40,7 +40,7 @@ export function ServiceCard({ slug, icon }: ServiceCardProps) {
       href={`/services#${slug}`}
       className="group relative flex flex-col rounded-2xl p-7 glass glass-hover sm:p-8"
     >
-      <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-white/70 text-brand shadow-sm transition-all duration-300 group-hover:bg-brand group-hover:text-white">
+      <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-white/[0.04] text-brand border border-white/5 shadow-sm transition-all duration-300 group-hover:bg-brand group-hover:text-white">
         {icons[icon]}
       </div>
       <h3 className="text-lg font-semibold tracking-tight text-ink transition-colors group-hover:text-brand">

@@ -22,7 +22,7 @@ export function TeamCard({ name }: TeamCardProps) {
   return (
     <article className="group overflow-hidden rounded-2xl glass glass-hover">
       {/* Photo */}
-      <div className="relative aspect-[4/5] w-full overflow-hidden bg-white/30">
+      <div className="relative aspect-[4/5] w-full overflow-hidden bg-white/[0.02]">
         {photo ? (
           <Image
             src={photo}

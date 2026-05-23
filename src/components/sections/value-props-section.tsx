@@ -1,34 +1,31 @@
 "use client";
 
-import { useLanguage } from "@/components/providers/language-provider";
-
-const accents = [
-  { num: "text-emerald-600", dot: "bg-emerald-500" },
-  { num: "text-sky-600", dot: "bg-sky-500" },
-  { num: "text-orange-600", dot: "bg-orange-500" }
-] as const;
+// Visual differentiators — icon + short label, no paragraphs
+const points = [
+  { icon: "⚡", label: "48h first draft" },
+  { icon: "🎨", label: "Custom design" },
+  { icon: "📱", label: "Mobile-first" },
+  { icon: "🔍", label: "SEO built-in" },
+  { icon: "💬", label: "WhatsApp support" },
+  { icon: "💰", label: "Fixed pricing" },
+];
 
 export function ValuePropsSection() {
-  const { messages: m } = useLanguage();
-
   return (
-    <section className="section-pad relative z-10 bg-transparent">
+    <section className="section-pad relative z-10">
       <div className="container-page">
-        <div className="grid gap-5 md:grid-cols-3">
-          {m.valueProps.map((item, index) => (
+        <h2 className="mb-10 text-2xl font-bold text-ink sm:text-3xl">Why Websy</h2>
+
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
+          {points.map((p) => (
             <div
-              key={item.title}
-              className="group relative rounded-2xl p-7 glass glass-hover sm:p-8"
+              key={p.label}
+              className="group relative flex flex-col items-center gap-3 overflow-hidden rounded-2xl border border-white/[0.07] bg-white/[0.03] py-7 px-4 text-center transition-all duration-300 hover:border-brand/20 hover:bg-white/[0.05]"
             >
-              <div className="flex items-center gap-3">
-                <span className={`h-2 w-2 rounded-full ${accents[index].dot}`} />
-                <p className={`font-mono text-xs font-semibold tracking-wider ${accents[index].num}`}>
-                  0{index + 1}
-                </p>
-              </div>
-              <h3 className="mt-5 text-lg font-semibold text-ink">{item.title}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-ink-muted sm:text-base">
-                {item.description}
+              <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-brand/40 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
+              <span className="text-4xl">{p.icon}</span>
+              <p className="text-xs font-semibold leading-tight text-ink-muted group-hover:text-ink transition-colors">
+                {p.label}
               </p>
             </div>
           ))}

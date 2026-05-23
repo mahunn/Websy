@@ -60,8 +60,8 @@ export function SiteHeader() {
                   className={cn(
                     "rounded-xl px-3 py-1.5 text-sm font-medium transition-all duration-150",
                     active
-                      ? "border border-white/60 bg-white/50 text-ink shadow-sm backdrop-blur-sm"
-                      : "text-ink-muted hover:bg-white/40 hover:text-ink backdrop-blur-sm"
+                      ? "border border-white/10 bg-white/[0.08] text-ink shadow-sm backdrop-blur-sm"
+                      : "text-ink-muted hover:bg-white/[0.05] hover:text-ink backdrop-blur-sm"
                   )}
                 >
                   {link.label}
@@ -86,7 +86,7 @@ export function SiteHeader() {
             {/* Mobile hamburger */}
             <button
               type="button"
-              className="inline-flex h-8 w-8 items-center justify-center rounded-xl border border-white/50 bg-white/35 text-ink-muted backdrop-blur-sm transition-all hover:bg-white/55 hover:text-ink lg:hidden"
+              className="inline-flex h-8 w-8 items-center justify-center rounded-xl border border-white/10 bg-white/[0.04] text-ink-muted backdrop-blur-sm transition-all hover:bg-white/[0.08] hover:text-ink lg:hidden"
               aria-expanded={open}
               aria-label="Toggle menu"
               onClick={() => setOpen(!open)}
@@ -119,8 +119,8 @@ export function SiteHeader() {
                     className={cn(
                       "rounded-xl px-3 py-2.5 text-sm font-medium transition-colors",
                       active
-                        ? "bg-white/45 text-ink backdrop-blur-sm"
-                        : "text-ink-muted hover:bg-white/35 hover:text-ink"
+                        ? "bg-white/[0.06] text-ink backdrop-blur-sm"
+                        : "text-ink-muted hover:bg-white/[0.04] hover:text-ink"
                     )}
                     onClick={() => setOpen(false)}
                   >

@@ -19,23 +19,23 @@ type ButtonAsLink = BaseProps &
 
 const variants: Record<ButtonVariant, string> = {
   primary: [
-    "bg-brand/90 text-white font-semibold",
-    "border border-white/20",
-    "shadow-[0_4px_16px_rgba(225,29,29,0.35),inset_0_1px_0_rgba(255,255,255,0.18)]",
-    "hover:bg-brand hover:shadow-[0_6px_24px_rgba(225,29,29,0.45),inset_0_1px_0_rgba(255,255,255,0.22)]",
+    "bg-gradient-to-r from-amber-400 to-yellow-600 text-black font-bold",
+    "border border-amber-400/20",
+    "shadow-[0_4px_20px_rgba(245,158,11,0.35),inset_0_1px_0_rgba(255,255,255,0.25)]",
+    "hover:from-amber-300 hover:to-yellow-500 hover:shadow-[0_6px_28px_rgba(245,158,11,0.5)]",
     "backdrop-blur-sm",
   ].join(" "),
   secondary: [
-    "bg-white/55 text-ink font-semibold",
-    "border border-white/60",
-    "shadow-[0_4px_16px_rgba(15,23,42,0.07),inset_0_1px_0_rgba(255,255,255,0.80)]",
-    "hover:bg-white/75 hover:shadow-[0_6px_24px_rgba(15,23,42,0.10),inset_0_1px_0_rgba(255,255,255,0.90)]",
+    "bg-white/[0.06] text-ink font-semibold",
+    "border border-white/10",
+    "shadow-[0_4px_16px_rgba(0,0,0,0.25),inset_0_1px_0_rgba(255,255,255,0.05)]",
+    "hover:bg-white/[0.12] hover:shadow-[0_6px_24px_rgba(0,0,0,0.35)]",
     "backdrop-blur-md",
   ].join(" "),
   ghost: [
-    "bg-white/30 text-ink-muted font-medium",
-    "border border-white/40",
-    "hover:bg-white/55 hover:text-ink",
+    "bg-white/[0.02] text-ink-muted font-medium",
+    "border border-white/5",
+    "hover:bg-white/[0.08] hover:text-ink",
     "backdrop-blur-sm",
   ].join(" "),
 };

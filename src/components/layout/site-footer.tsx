@@ -17,7 +17,7 @@ export function SiteFooter() {
   const { messages: m } = useLanguage();
 
   return (
-    <footer className="relative z-10 border-t border-white/40 bg-white/65 backdrop-blur-md">
+    <footer className="relative z-10 border-t border-white/5 bg-paper/60 backdrop-blur-md">
       <div className="container-page pb-10 pt-16 sm:pt-20">
         <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-12">
           <div className="lg:col-span-4">

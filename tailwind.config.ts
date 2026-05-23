@@ -6,43 +6,43 @@ const config: Config = {
     extend: {
       colors: {
         ink: {
-          DEFAULT: "#0F172A",
-          soft: "#1E293B",
-          muted: "#475569",
-          subtle: "#64748B",
-          faint: "#94A3B8"
+          DEFAULT: "#F9FAFB",
+          soft: "#F3F4F6",
+          muted: "#9CA3AF",
+          subtle: "#6B7280",
+          faint: "#374151"
         },
         paper: {
-          DEFAULT: "#FAFAF7",
-          surface: "#FFFFFF",
-          alt: "#F4F2EC",
-          tint: "#F8F6F1"
+          DEFAULT: "#080700",
+          surface: "#100E02",
+          alt: "#1A1703",
+          tint: "#232005"
         },
         line: {
-          DEFAULT: "rgba(15, 23, 42, 0.08)",
-          strong: "rgba(15, 23, 42, 0.14)"
+          DEFAULT: "rgba(255, 255, 255, 0.08)",
+          strong: "rgba(255, 255, 255, 0.16)"
         },
         brand: {
-          DEFAULT: "#E11D1D",
-          hover: "#B91C1C",
-          soft: "#FFF1F1",
-          ring: "rgba(225, 29, 29, 0.18)"
+          DEFAULT: "#F59E0B",
+          hover: "#D97706",
+          soft: "rgba(245, 158, 11, 0.08)",
+          ring: "rgba(245, 158, 11, 0.2)"
         },
         ostad: {
-          brand: "#E11D1D",
-          darkBg: "#FAFAF7",
-          lightBg: "#FFFFFF",
-          altBg: "#F4F2EC",
-          textMain: "#0F172A",
-          textMuted: "#475569"
+          brand: "#F59E0B",
+          darkBg: "#080700",
+          lightBg: "#100E02",
+          altBg: "#1A1703",
+          textMain: "#F9FAFB",
+          textMuted: "#9CA3AF"
         }
       },
       boxShadow: {
-        soft: "0 1px 2px rgba(15, 23, 42, 0.04), 0 8px 24px -16px rgba(15, 23, 42, 0.12)",
-        lift: "0 1px 3px rgba(15, 23, 42, 0.06), 0 18px 40px -20px rgba(15, 23, 42, 0.18)",
-        ring: "0 0 0 4px rgba(225, 29, 29, 0.12)",
-        ostad: "0 1px 2px rgba(15, 23, 42, 0.04), 0 8px 24px -16px rgba(15, 23, 42, 0.12)",
-        "ostad-md": "0 1px 3px rgba(15, 23, 42, 0.06), 0 18px 40px -20px rgba(15, 23, 42, 0.18)"
+        soft: "0 4px 20px -2px rgba(0, 0, 0, 0.4), 0 2px 8px -1px rgba(0, 0, 0, 0.2)",
+        lift: "0 20px 40px -15px rgba(0, 0, 0, 0.6), 0 4px 16px -4px rgba(0, 0, 0, 0.3)",
+        ring: "0 0 0 4px rgba(245, 158, 11, 0.2)",
+        ostad: "0 4px 20px -2px rgba(0, 0, 0, 0.4), 0 2px 8px -1px rgba(0, 0, 0, 0.2)",
+        "ostad-md": "0 20px 40px -15px rgba(0, 0, 0, 0.6), 0 4px 16px -4px rgba(0, 0, 0, 0.3)"
       },
       fontFamily: {
         bengali: ["var(--font-bengali)", "var(--font-inter)", "system-ui", "sans-serif"]

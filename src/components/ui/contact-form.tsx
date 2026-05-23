@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useLanguage } from "@/components/providers/language-provider";
 
 const fieldBase =
-  "w-full rounded-xl border border-white/50 bg-white/55 px-3.5 py-2.5 text-sm text-ink placeholder-ink-faint backdrop-blur-sm transition-all focus:border-brand focus:bg-white/70 focus:outline-none focus:ring-2 focus:ring-brand-ring disabled:opacity-50";
+  "w-full rounded-xl border border-white/10 bg-white/[0.03] px-3.5 py-2.5 text-sm text-ink placeholder-ink-faint backdrop-blur-sm transition-all focus:border-brand focus:bg-white/[0.06] focus:outline-none focus:ring-2 focus:ring-brand-ring disabled:opacity-50";
 
 export function ContactForm() {
   const { messages } = useLanguage();
@@ -88,7 +88,7 @@ export function ContactForm() {
         </p>
         <button
           onClick={() => setIsSuccess(false)}
-          className="mt-8 rounded-full border border-white/50 bg-white/55 px-6 py-2 text-sm font-medium text-ink backdrop-blur-sm transition-colors hover:bg-white/75"
+          className="mt-8 rounded-full border border-white/10 bg-white/[0.06] px-6 py-2 text-sm font-medium text-ink backdrop-blur-sm transition-colors hover:bg-white/[0.12]"
         >
           {t.successBtn}
         </button>

@@ -25,12 +25,12 @@ export function WebsyMark({ className }: { className?: string }) {
     >
       <path
         d={W_PATH}
-        stroke="#0F172A"
+        stroke="#FFFFFF"
         strokeWidth="2.35"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
-      <circle cx={W_DOT.cx} cy={W_DOT.cy} r={W_DOT.r} fill="#E11D1D" />
+      <circle cx={W_DOT.cx} cy={W_DOT.cy} r={W_DOT.r} fill="#F59E0B" />
     </svg>
   );
 }
@@ -67,16 +67,16 @@ export function WebsyWordmark({
     >
       <path
         d={W_PATH}
-        stroke="#0F172A"
+        stroke="#FFFFFF"
         strokeWidth="2.35"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
-      <circle cx={W_DOT.cx} cy={W_DOT.cy} r={W_DOT.r} fill="#E11D1D" />
+      <circle cx={W_DOT.cx} cy={W_DOT.cy} r={W_DOT.r} fill="#F59E0B" />
       <text
         x="20.5"
         y="22"
-        fill="#0F172A"
+        fill="#FFFFFF"
         fontFamily={FONT}
         fontSize="17.5"
         fontWeight="600"

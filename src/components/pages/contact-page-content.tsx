@@ -28,7 +28,7 @@ export function ContactPageContent() {
                 rel="noopener noreferrer"
                 className="group flex flex-col rounded-2xl p-6 glass glass-hover sm:p-7"
               >
-                <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-100/80 text-emerald-700">
+                <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
                   <svg
                     className="h-5 w-5"
                     fill="currentColor"
@@ -53,7 +53,7 @@ export function ContactPageContent() {
                 href={`mailto:${contact.email}`}
                 className="group flex flex-col rounded-2xl p-6 glass glass-hover sm:p-7"
               >
-                <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-brand-soft/80 text-brand">
+                <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-brand/10 text-brand border border-brand/20">
                   <svg
                     className="h-5 w-5"
                     fill="none"

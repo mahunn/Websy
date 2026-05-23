@@ -1,46 +1,81 @@
 "use client";
 
-import { useLanguage } from "@/components/providers/language-provider";
-import { ServiceCard } from "@/components/ui/service-card";
-import { SectionHeading } from "@/components/ui/section-heading";
-import { SectionLink } from "@/components/ui/section-link";
-import { serviceMeta } from "@/lib/site-config";
+import Link from "next/link";
 
-type ServicesSectionProps = {
-  preview?: boolean;
-};
+const services = [
+  {
+    icon: "🛒",
+    title: "Ecommerce",
+    tags: ["Products", "Cart", "Payments"],
+    href: "/services",
+  },
+  {
+    icon: "🎯",
+    title: "Landing Pages",
+    tags: ["Ads", "Conversion", "A/B"],
+    href: "/services",
+  },
+  {
+    icon: "🏢",
+    title: "Business Sites",
+    tags: ["Brand", "SEO", "Trust"],
+    href: "/services",
+  },
+  {
+    icon: "⚡",
+    title: "Performance",
+    tags: ["Speed", "Core Vitals", "Uptime"],
+    href: "/services",
+  },
+];
 
-export function ServicesSection({ preview = false }: ServicesSectionProps) {
-  const { messages: m } = useLanguage();
-
+export function ServicesSection({ preview = false }: { preview?: boolean }) {
   return (
-    <section className="section-pad relative z-10 bg-transparent">
+    <section className="section-pad relative z-10">
       <div className="container-page">
-        <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
-          <SectionHeading
-            eyebrow={m.services.eyebrow}
-            title={m.services.title}
-            description={m.services.description}
-          />
-          {preview ? <SectionLink href="/services" label={m.services.viewAll} /> : null}
+        {/* Header */}
+        <div className="mb-12 flex items-end justify-between">
+          <h2 className="text-2xl font-bold text-ink sm:text-3xl">What we build</h2>
+          {preview && (
+            <Link href="/services" className="text-sm font-semibold text-brand hover:text-brand-hover transition-colors">
+              All services →
+            </Link>
+          )}
         </div>
-        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:gap-6">
-          {serviceMeta.map((service) => (
-            <ServiceCard key={service.slug} slug={service.slug} icon={service.icon} />
+
+        {/* Visual service cards */}
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {services.map((s) => (
+            <Link
+              key={s.title}
+              href={s.href}
+              className="group relative flex flex-col overflow-hidden rounded-2xl border border-white/[0.07] bg-white/[0.03] p-6 transition-all duration-300 hover:border-brand/20 hover:bg-white/[0.05]"
+            >
+              <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-brand/40 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
+
+              {/* Big icon */}
+              <span className="text-5xl">{s.icon}</span>
+
+              <h3 className="mt-5 text-base font-bold text-ink group-hover:text-brand transition-colors">
+                {s.title}
+              </h3>
+
+              {/* Feature pills */}
+              <div className="mt-3 flex flex-wrap gap-1.5">
+                {s.tags.map((tag) => (
+                  <span key={tag} className="rounded-full bg-white/[0.05] px-2.5 py-0.5 text-[11px] text-ink-subtle">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+
+              {/* Arrow reveal */}
+              <span className="mt-5 text-sm font-semibold text-brand opacity-0 transition-all group-hover:opacity-100">→</span>
+
+              <div className="pointer-events-none absolute -bottom-8 -right-8 h-24 w-24 rounded-full bg-brand/[0.07] blur-2xl opacity-0 transition-opacity group-hover:opacity-100" />
+            </Link>
           ))}
         </div>
-        {!preview ? (
-          <p className="mt-12 text-center text-sm text-ink-subtle">
-            {m.services.expansion}{" "}
-            <a
-              href="/about"
-              className="font-semibold text-brand underline-offset-4 transition-colors hover:text-brand-hover hover:underline"
-            >
-              {m.services.expansionLink}
-            </a>
-            .
-          </p>
-        ) : null}
       </div>
     </section>
   );

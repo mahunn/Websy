@@ -18,12 +18,12 @@
 
   body {
     @apply font-bengali antialiased overflow-x-hidden text-ink;
-    background-color: #F0F6FF;
+    background-color: #080700;
   }
 
   ::selection {
-    background-color: rgba(225, 29, 29, 0.18);
-    color: #0F172A;
+    background-color: rgba(245, 158, 11, 0.3);
+    color: #FFFFFF;
   }
 }
 
@@ -39,33 +39,33 @@
 
   /* ── Glass system ── */
   .glass {
-    background: linear-gradient(135deg, rgba(255,255,255,0.78) 0%, rgba(255,255,255,0.55) 100%);
-    backdrop-filter: blur(12px) saturate(150%);
-    -webkit-backdrop-filter: blur(12px) saturate(150%);
-    border: 1px solid rgba(255,255,255,0.60);
+    background: linear-gradient(135deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%);
+    backdrop-filter: blur(16px) saturate(160%);
+    -webkit-backdrop-filter: blur(16px) saturate(160%);
+    border: 1px solid rgba(255,255,255,0.08);
     box-shadow:
-      0 8px 32px rgba(15,23,42,0.08),
-      inset 0 1px 0 rgba(255,255,255,0.80);
+      0 8px 32px rgba(0,0,0,0.35),
+      inset 0 1px 0 rgba(255,255,255,0.05);
   }
 
   .glass-card {
-    background: linear-gradient(135deg, rgba(255,255,255,0.72) 0%, rgba(255,255,255,0.48) 100%);
-    backdrop-filter: blur(10px) saturate(140%);
-    -webkit-backdrop-filter: blur(10px) saturate(140%);
-    border: 1px solid rgba(255,255,255,0.52);
+    background: linear-gradient(135deg, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0.005) 100%);
+    backdrop-filter: blur(12px) saturate(145%);
+    -webkit-backdrop-filter: blur(12px) saturate(145%);
+    border: 1px solid rgba(255,255,255,0.06);
     box-shadow:
-      0 4px 20px rgba(15,23,42,0.07),
-      inset 0 1px 0 rgba(255,255,255,0.70);
+      0 4px 20px rgba(0,0,0,0.3),
+      inset 0 1px 0 rgba(255,255,255,0.04);
   }
 
   .glass-strong {
-    background: rgba(255,255,255,0.88);
-    backdrop-filter: blur(14px) saturate(160%);
-    -webkit-backdrop-filter: blur(14px) saturate(160%);
-    border: 1px solid rgba(255,255,255,0.70);
+    background: rgba(15,23,42,0.75);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(255,255,255,0.12);
     box-shadow:
-      0 8px 40px rgba(15,23,42,0.10),
-      inset 0 1px 0 rgba(255,255,255,0.90);
+      0 8px 40px rgba(0,0,0,0.45),
+      inset 0 1px 0 rgba(255,255,255,0.08);
   }
 
   .glass-hover {
@@ -73,10 +73,11 @@
   }
 
   .glass-hover:hover {
-    background: linear-gradient(135deg, rgba(255,255,255,0.80) 0%, rgba(255,255,255,0.55) 100%);
+    background: linear-gradient(135deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%);
+    border-color: rgba(255,255,255,0.14);
     box-shadow:
-      0 12px 40px rgba(15,23,42,0.12),
-      inset 0 1px 0 rgba(255,255,255,0.90);
+      0 12px 40px rgba(0,0,0,0.5),
+      inset 0 1px 0 rgba(255,255,255,0.08);
     transform: translateY(-2px);
   }
 
@@ -86,10 +87,10 @@
   }
 
   .card-ostad:hover {
-    background: linear-gradient(135deg, rgba(255,255,255,0.80) 0%, rgba(255,255,255,0.55) 100%);
+    background: linear-gradient(135deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%);
     box-shadow:
-      0 12px 40px rgba(15,23,42,0.12),
-      inset 0 1px 0 rgba(255,255,255,0.90);
+      0 12px 40px rgba(0,0,0,0.5),
+      inset 0 1px 0 rgba(255,255,255,0.08);
   }
 
   .card-ostad-hover {
@@ -142,15 +143,11 @@
     inset: 0;
     background: linear-gradient(
       130deg,
-      #d6e8f8,
-      #f5d4e0,
-      #d8c8f5,
-      #c8dff5,
-      #e8d8f8,
-      #f0c8d6,
-      #b8d4f5,
-      #cfc0f0,
-      #d6e8f8
+      #080700,
+      #0d0b01,
+      #131002,
+      #0d0b01,
+      #080700
     );
     background-size: 360% 360%;
     animation: site-gradient-flow 22s ease-in-out infinite;
@@ -168,7 +165,7 @@
     left: -8%;
     width: min(75vw, 560px);
     height: min(75vw, 560px);
-    background: radial-gradient(circle, rgba(225, 29, 29, 0.24) 0%, transparent 65%);
+    background: radial-gradient(circle, rgba(245, 158, 11, 0.10) 0%, transparent 65%);
     animation-delay: 0s;
   }
 
@@ -177,7 +174,7 @@
     right: -12%;
     width: min(70vw, 520px);
     height: min(70vw, 520px);
-    background: radial-gradient(circle, rgba(59, 130, 246, 0.26) 0%, transparent 65%);
+    background: radial-gradient(circle, rgba(180, 130, 20, 0.06) 0%, transparent 65%);
     animation-delay: -7s;
   }
 
@@ -186,20 +183,20 @@
     left: 35%;
     width: min(72vw, 540px);
     height: min(72vw, 540px);
-    background: radial-gradient(circle, rgba(139, 92, 246, 0.28) 0%, transparent 62%);
+    background: radial-gradient(circle, rgba(245, 158, 11, 0.05) 0%, transparent 62%);
     animation-delay: -14s;
   }
 
   /* ── Nav pill — frosted glass (see-through) + color tint overlay ── */
   .nav-pill {
     @apply relative overflow-hidden rounded-2xl border transition-all duration-300;
-    background: rgba(255, 255, 255, 0.45);
+    background: rgba(10, 15, 30, 0.4);
     backdrop-filter: blur(20px) saturate(160%);
     -webkit-backdrop-filter: blur(20px) saturate(160%);
-    border-color: rgba(255, 255, 255, 0.55);
+    border-color: rgba(255, 255, 255, 0.08);
     box-shadow:
-      0 4px 24px rgba(15, 23, 42, 0.06),
-      inset 0 1px 0 rgba(255, 255, 255, 0.7);
+      0 4px 24px rgba(0, 0, 0, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.05);
   }
 
   .nav-pill__tint {
@@ -207,29 +204,25 @@
     inset: -30%;
     z-index: 0;
     pointer-events: none;
-    opacity: 0.5;
+    opacity: 0.15;
     background: linear-gradient(
       130deg,
-      #d6e8f8,
-      #f5d4e0,
-      #d8c8f5,
-      #c8dff5,
-      #e8d8f8,
-      #f0c8d6,
-      #b8d4f5,
-      #cfc0f0,
-      #d6e8f8
+      #080700,
+      #0d0b01,
+      #131002,
+      #0d0b01,
+      #080700
     );
     background-size: 360% 360%;
     animation: site-gradient-flow 22s ease-in-out infinite;
   }
 
   .nav-pill--scrolled {
-    background: rgba(255, 255, 255, 0.58);
-    border-color: rgba(255, 255, 255, 0.7);
+    background: rgba(15, 23, 42, 0.65);
+    border-color: rgba(255, 255, 255, 0.12);
     box-shadow:
-      0 8px 32px rgba(15, 23, 42, 0.1),
-      inset 0 1px 0 rgba(255, 255, 255, 0.88);
+      0 8px 32px rgba(0, 0, 0, 0.5),
+      inset 0 1px 0 rgba(255, 255, 255, 0.08);
   }
 
   .nav-pill__inner {
@@ -256,8 +249,8 @@
 
   .paper-grid {
     background-image:
-      linear-gradient(rgba(15,23,42,0.04) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(15,23,42,0.04) 1px, transparent 1px);
+      linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px);
     background-size: 56px 56px;
   }
 }

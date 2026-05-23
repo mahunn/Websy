@@ -1,78 +1,66 @@
 "use client";
 
 import Link from "next/link";
-import { useLanguage } from "@/components/providers/language-provider";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import { getWhatsAppUrl } from "@/lib/site-config";
 
-function HighlightedTitle({ title, highlight }: { title: string; highlight: string }) {
-  const idx = title.indexOf(highlight);
-  if (idx === -1) return <>{title}</>;
-
-  const before = title.slice(0, idx);
-  const after = title.slice(idx + highlight.length);
-
-  return (
-    <>
-      {before}
-      <span className="relative inline-block text-brand">
-        <span className="relative z-10">{highlight}</span>
-        <span className="absolute inset-x-[-0.15em] bottom-[0.04em] top-[0.5em] -z-0 origin-left animate-highlight-reveal rounded-md bg-brand/[0.07]" />
-      </span>
-      {after}
-    </>
-  );
-}
+const stats = [
+  { value: "12+", label: "Sites Built" },
+  { value: "48h", label: "First Draft" },
+  { value: "7d", label: "Avg Launch" },
+];
 
 export function HeroSection() {
-  const { messages: m } = useLanguage();
-  const h = m.hero;
-
   return (
-    <section className="relative overflow-hidden pt-8 sm:pt-16">
-      <div className="container-page relative pb-20 sm:pb-28">
-        <div className="mx-auto max-w-3xl text-center">
-          <span className="inline-flex items-center gap-2 rounded-full border border-white/60 bg-white/60 px-3 py-1 text-[11px] font-medium tracking-wide text-ink-muted shadow-sm backdrop-blur-md">
-            <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand/40" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-brand" />
-            </span>
-            {h.badge}
-          </span>
+    <section className="relative overflow-hidden pt-10 sm:pt-20">
+      {/* Background */}
+      <div className="absolute inset-0 -z-10 opacity-[0.22] pointer-events-none select-none">
+        <Image src="/hero-bg.png" alt="" fill priority className="object-cover object-center" sizes="100vw" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-paper/50 to-paper" />
+      </div>
 
-          <h1 className="mt-8 text-balance text-[2.5rem] font-bold leading-[1.1] tracking-tight text-ink sm:text-6xl lg:text-[4rem]">
-            <HighlightedTitle title={h.title} highlight={h.titleHighlight} />
+      <div className="container-page relative pb-24 sm:pb-32">
+        <div className="mx-auto max-w-3xl text-center">
+
+          {/* One-liner */}
+          <h1 className="text-[2.8rem] font-bold leading-[1.06] tracking-tight text-ink sm:text-6xl lg:text-[5rem]">
+            Websites that<br />
+            <span className="text-brand">actually convert.</span>
           </h1>
 
-          <p className="mx-auto mt-5 max-w-2xl text-xl font-medium text-ink-muted sm:text-2xl">
-            {h.subtext}
+          <p className="mx-auto mt-5 max-w-sm text-base text-ink-muted sm:text-lg">
+            Fast. Beautiful. Built for sales.
           </p>
 
+          {/* CTAs */}
           <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <Button href="/contact" variant="primary" className="min-w-[200px]">
-              {h.ctaPrimary}
+            <Button href={getWhatsAppUrl()} variant="primary" className="min-w-[200px]">
+              Start a Project
             </Button>
             <Button href="/work" variant="secondary" className="min-w-[200px]">
-              {h.ctaSecondary}
+              See Our Work
             </Button>
           </div>
-        </div>
 
-        <div className="mx-auto mt-10 flex items-center justify-center gap-2 sm:mt-14 sm:gap-3">
-          {[
-            { icon: "🛒", label: "Ecommerce", href: "/services" },
-            { icon: "📄", label: "Landing Pages", href: "/services" },
-            { icon: "💼", label: "Portfolio", href: "/services" }
-          ].map((item) => (
-            <Link
-              key={item.label}
-              href={item.href}
-              prefetch
-              className="group inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-medium text-ink transition-all sm:gap-2.5 sm:px-5 sm:py-2.5 sm:text-sm glass glass-hover"
-            >
-              <span className="text-sm sm:text-base">{item.icon}</span>
-              {item.label}
-            </Link>
-          ))}
+          {/* Stats */}
+          <div className="mx-auto mt-14 grid max-w-sm grid-cols-3 divide-x divide-white/10 rounded-2xl border border-white/10 bg-white/[0.03] backdrop-blur-md">
+            {stats.map((s) => (
+              <div key={s.label} className="flex flex-col items-center py-5">
+                <span className="text-xl font-bold text-brand sm:text-2xl">{s.value}</span>
+                <span className="mt-0.5 text-[11px] text-ink-subtle">{s.label}</span>
+              </div>
+            ))}
+          </div>
+
+          {/* Service chips */}
+          <div className="mt-7 flex flex-wrap justify-center gap-2">
+            {["🛒 Ecommerce", "🎯 Landing Pages", "🏢 Business Sites", "⚡ Performance"].map((item) => (
+              <Link key={item} href="/services" className="rounded-full border border-white/10 bg-white/[0.03] px-4 py-1.5 text-xs font-medium text-ink-muted transition-all hover:border-brand/30 hover:text-ink">
+                {item}
+              </Link>
+            ))}
+          </div>
         </div>
       </div>
     </section>

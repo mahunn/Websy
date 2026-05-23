@@ -1,23 +1,33 @@
 "use client";
 
-import { useLanguage } from "@/components/providers/language-provider";
+// Visual "before vs after" pain strip — icons only, no paragraphs
+const items = [
+  { before: "🕸️", after: "⚡", label: "Slow → Fast" },
+  { before: "😐", after: "😍", label: "Generic → Unique" },
+  { before: "📉", after: "📈", label: "No sales → Converting" },
+  { before: "🔍", after: "🏆", label: "Invisible → Found" },
+];
 
 export function TrustSection() {
-  const { messages: m } = useLanguage();
-
   return (
-    <section className="relative z-10 border-y border-white/40 bg-white/60 py-14 backdrop-blur-md sm:py-16">
+    <section className="relative z-10 py-10">
       <div className="container-page">
-        <p className="text-center text-[11px] font-semibold uppercase tracking-[0.22em] text-ink-subtle sm:text-xs">
-          {m.trust.line}
-        </p>
-        <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
-          {m.trust.logos.map((name) => (
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+          {items.map((item) => (
             <div
-              key={name}
-              className="flex h-14 items-center justify-center rounded-xl border border-line bg-paper text-[11px] font-semibold uppercase tracking-[0.18em] text-ink-subtle transition-colors duration-300 hover:border-line-strong hover:text-ink"
+              key={item.label}
+              className="group relative flex flex-col items-center gap-3 overflow-hidden rounded-2xl border border-white/[0.07] bg-white/[0.03] px-4 py-7 text-center transition-all duration-300 hover:border-brand/20 hover:bg-white/[0.05]"
             >
-              {name}
+              {/* Before → After visual */}
+              <div className="flex items-center gap-3 text-3xl sm:text-4xl">
+                <span className="opacity-40">{item.before}</span>
+                <span className="text-base text-brand opacity-60">→</span>
+                <span>{item.after}</span>
+              </div>
+              <p className="text-xs font-semibold text-ink-muted group-hover:text-ink transition-colors">
+                {item.label}
+              </p>
+              <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-brand/30 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
             </div>
           ))}
         </div>
