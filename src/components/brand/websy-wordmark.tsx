@@ -25,18 +25,18 @@ export function WebsyMark({ className }: { className?: string }) {
     >
       <path
         d={W_PATH}
-        stroke="#FFFFFF"
+        stroke="currentColor"
         strokeWidth="2.35"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
-      <circle cx={W_DOT.cx} cy={W_DOT.cy} r={W_DOT.r} fill="#F59E0B" />
+      <circle cx={W_DOT.cx} cy={W_DOT.cy} r={W_DOT.r} fill="#9046FF" />
     </svg>
   );
 }
 
 /**
- * Single unified wordmark — cool W flows into “ebsy”, one SVG, no box or gap
+ * Single unified wordmark — cool W flows into "ebsy", one SVG, no box or gap
  */
 export function WebsyWordmark({
   className,
@@ -67,16 +67,16 @@ export function WebsyWordmark({
     >
       <path
         d={W_PATH}
-        stroke="#FFFFFF"
+        stroke="currentColor"
         strokeWidth="2.35"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
-      <circle cx={W_DOT.cx} cy={W_DOT.cy} r={W_DOT.r} fill="#F59E0B" />
+      <circle cx={W_DOT.cx} cy={W_DOT.cy} r={W_DOT.r} fill="#9046FF" />
       <text
         x="20.5"
         y="22"
-        fill="#FFFFFF"
+        fill="currentColor"
         fontFamily={FONT}
         fontSize="17.5"
         fontWeight="600"

@@ -31,7 +31,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#FAFAF7"
+  themeColor: "#09090B"
 };
 
 export default function RootLayout({
@@ -40,7 +40,7 @@ export default function RootLayout({
   return (
     <html lang="bn" suppressHydrationWarning>
       <body
-        className={`${inter.variable} ${notoBengali.variable} font-bengali antialiased bg-paper text-ink`}
+        className={`${inter.variable} ${notoBengali.variable} font-bengali antialiased bg-paper text-ink selection:bg-brand/25`}
       >
         {children}
       </body>

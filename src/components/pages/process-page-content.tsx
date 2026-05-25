@@ -23,7 +23,7 @@ export function ProcessPageContent() {
               key={step.title}
               className="relative border-l border-line pl-8 pb-12 last:pb-0"
             >
-              <span className="absolute -left-[1.1rem] flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/[0.06] text-[11px] font-semibold text-brand backdrop-blur-md shadow-sm">
+              <span className="absolute -left-[1.1rem] flex h-9 w-9 items-center justify-center rounded-full border border-brand/15 bg-brand-soft text-[11px] font-semibold text-brand backdrop-blur-md shadow-sm">
                 {String(index + 1).padStart(2, "0")}
               </span>
               <h2 className="text-xl font-semibold tracking-tight text-ink sm:text-2xl">

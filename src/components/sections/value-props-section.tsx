@@ -20,7 +20,7 @@ export function ValuePropsSection() {
           {points.map((p) => (
             <div
               key={p.label}
-              className="group relative flex flex-col items-center gap-3 overflow-hidden rounded-2xl border border-white/[0.07] bg-white/[0.03] py-7 px-4 text-center transition-all duration-300 hover:border-brand/20 hover:bg-white/[0.05]"
+              className="group relative flex flex-col items-center gap-3 overflow-hidden rounded-2xl glass glass-hover py-7 px-4 text-center"
             >
               <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-brand/40 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
               <span className="text-4xl">{p.icon}</span>

@@ -65,7 +65,7 @@ export function ProcessPreviewSection() {
               {/* Step number */}
               <div className="flex items-center justify-between">
                 <span className="font-mono text-xs font-bold tracking-wider text-brand">{step.num}</span>
-                <span className="rounded-full border border-white/10 bg-white/[0.04] px-2.5 py-1 text-[10px] font-medium text-ink-subtle">
+                <span className="rounded-full border border-brand/10 bg-brand-soft px-2.5 py-1 text-[10px] font-medium text-brand">
                   {step.duration}
                 </span>
               </div>

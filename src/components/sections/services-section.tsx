@@ -49,7 +49,7 @@ export function ServicesSection({ preview = false }: { preview?: boolean }) {
             <Link
               key={s.title}
               href={s.href}
-              className="group relative flex flex-col overflow-hidden rounded-2xl border border-white/[0.07] bg-white/[0.03] p-6 transition-all duration-300 hover:border-brand/20 hover:bg-white/[0.05]"
+              className="group relative flex flex-col overflow-hidden rounded-2xl glass glass-hover p-6"
             >
               <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-brand/40 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
 
@@ -63,7 +63,7 @@ export function ServicesSection({ preview = false }: { preview?: boolean }) {
               {/* Feature pills */}
               <div className="mt-3 flex flex-wrap gap-1.5">
                 {s.tags.map((tag) => (
-                  <span key={tag} className="rounded-full bg-white/[0.05] px-2.5 py-0.5 text-[11px] text-ink-subtle">
+                  <span key={tag} className="rounded-full bg-brand-soft border border-brand/5 px-2.5 py-0.5 text-[11px] text-brand">
                     {tag}
                   </span>
                 ))}

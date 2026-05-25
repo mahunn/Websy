@@ -16,7 +16,7 @@ export function TrustSection() {
           {items.map((item) => (
             <div
               key={item.label}
-              className="group relative flex flex-col items-center gap-3 overflow-hidden rounded-2xl border border-white/[0.07] bg-white/[0.03] px-4 py-7 text-center transition-all duration-300 hover:border-brand/20 hover:bg-white/[0.05]"
+              className="group relative flex flex-col items-center gap-3 overflow-hidden rounded-2xl glass glass-hover px-4 py-7 text-center"
             >
               {/* Before → After visual */}
               <div className="flex items-center gap-3 text-3xl sm:text-4xl">

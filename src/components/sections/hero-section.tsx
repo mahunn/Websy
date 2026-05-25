@@ -15,7 +15,7 @@ export function HeroSection() {
   return (
     <section className="relative overflow-hidden pt-10 sm:pt-20">
       {/* Background */}
-      <div className="absolute inset-0 -z-10 opacity-[0.22] pointer-events-none select-none">
+      <div className="absolute inset-0 -z-10 opacity-[0.14] pointer-events-none select-none">
         <Image src="/hero-bg.png" alt="" fill priority className="object-cover object-center" sizes="100vw" />
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-paper/50 to-paper" />
       </div>
@@ -44,7 +44,7 @@ export function HeroSection() {
           </div>
 
           {/* Stats */}
-          <div className="mx-auto mt-14 grid max-w-sm grid-cols-3 divide-x divide-white/10 rounded-2xl border border-white/10 bg-white/[0.03] backdrop-blur-md">
+          <div className="mx-auto mt-14 grid max-w-sm grid-cols-3 divide-x divide-brand/15 rounded-2xl border border-brand/15 bg-paper-surface/60 backdrop-blur-md">
             {stats.map((s) => (
               <div key={s.label} className="flex flex-col items-center py-5">
                 <span className="text-xl font-bold text-brand sm:text-2xl">{s.value}</span>
@@ -56,7 +56,7 @@ export function HeroSection() {
           {/* Service chips */}
           <div className="mt-7 flex flex-wrap justify-center gap-2">
             {["🛒 Ecommerce", "🎯 Landing Pages", "🏢 Business Sites", "⚡ Performance"].map((item) => (
-              <Link key={item} href="/services" className="rounded-full border border-white/10 bg-white/[0.03] px-4 py-1.5 text-xs font-medium text-ink-muted transition-all hover:border-brand/30 hover:text-ink">
+              <Link key={item} href="/services" className="rounded-full border border-brand/10 bg-brand/[0.04] px-4 py-1.5 text-xs font-medium text-ink-muted transition-all hover:border-brand/25 hover:bg-brand/[0.08] hover:text-ink">
                 {item}
               </Link>
             ))}

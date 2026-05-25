@@ -39,7 +39,7 @@ export function CtaSection() {
               <ul className="space-y-3">
                 {nudges.map((n) => (
                   <li key={n.text} className="flex items-center gap-3 text-sm text-ink-muted">
-                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-white/10 bg-white/[0.04] text-base">
+                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-brand/10 bg-brand-soft text-base">
                       {n.icon}
                     </span>
                     {n.text}

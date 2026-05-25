@@ -39,7 +39,7 @@ export function PortfolioCard({ slug, href }: PortfolioCardProps) {
         </div>
       </Link>
       <div className="p-5 sm:p-6">
-        <span className="badge-ostad border border-white/10 bg-white/[0.04] text-ink-subtle backdrop-blur-sm">
+        <span className="badge-ostad border border-brand/10 bg-brand-soft text-brand backdrop-blur-sm">
           {project.category}
         </span>
         <h3 className="mt-3 text-lg font-semibold tracking-tight text-ink">

@@ -58,10 +58,10 @@ export function SiteHeader() {
                   href={link.href}
                   prefetch
                   className={cn(
-                    "rounded-xl px-3 py-1.5 text-sm font-medium transition-all duration-150",
+                    "rounded-xl px-3 py-1.5 text-xs font-semibold uppercase tracking-wider transition-all duration-150",
                     active
-                      ? "border border-white/10 bg-white/[0.08] text-ink shadow-sm backdrop-blur-sm"
-                      : "text-ink-muted hover:bg-white/[0.05] hover:text-ink backdrop-blur-sm"
+                      ? "border border-brand/12 bg-brand/[0.07] text-brand shadow-sm"
+                      : "text-ink-muted hover:bg-brand/[0.04] hover:text-ink"
                   )}
                 >
                   {link.label}
@@ -86,7 +86,7 @@ export function SiteHeader() {
             {/* Mobile hamburger */}
             <button
               type="button"
-              className="inline-flex h-8 w-8 items-center justify-center rounded-xl border border-white/10 bg-white/[0.04] text-ink-muted backdrop-blur-sm transition-all hover:bg-white/[0.08] hover:text-ink lg:hidden"
+              className="inline-flex h-8 w-8 items-center justify-center rounded-xl border border-line bg-paper-surface/80 text-ink-muted transition-all hover:bg-paper-alt hover:text-ink lg:hidden"
               aria-expanded={open}
               aria-label="Toggle menu"
               onClick={() => setOpen(!open)}
@@ -106,7 +106,7 @@ export function SiteHeader() {
 
         {/* Mobile dropdown — inside the pill */}
         {open && (
-          <div ref={dropdownRef} className="border-t border-white/40 px-4 pb-4 pt-3 lg:hidden">
+          <div ref={dropdownRef} className="border-t border-line px-4 pb-4 pt-3 lg:hidden">
             <nav className="flex flex-col gap-0.5" aria-label="Mobile">
               {navItems.map((link) => {
                 const active =
@@ -117,10 +117,10 @@ export function SiteHeader() {
                     href={link.href}
                     prefetch
                     className={cn(
-                      "rounded-xl px-3 py-2.5 text-sm font-medium transition-colors",
+                      "rounded-xl px-3 py-2.5 text-xs font-semibold uppercase tracking-wider transition-colors",
                       active
-                        ? "bg-white/[0.06] text-ink backdrop-blur-sm"
-                        : "text-ink-muted hover:bg-white/[0.04] hover:text-ink"
+                        ? "bg-brand/[0.07] text-brand"
+                        : "text-ink-muted hover:bg-brand/[0.04] hover:text-ink"
                     )}
                     onClick={() => setOpen(false)}
                   >
