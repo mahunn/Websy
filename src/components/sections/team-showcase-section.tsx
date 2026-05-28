@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useLanguage } from "@/components/providers/language-provider";
 import { TeamCard } from "@/components/ui/team-card";
 import { SectionHeading } from "@/components/ui/section-heading";
+import { ArrowRightIcon } from "@/components/ui/icons";
 import { teamMeta } from "@/lib/site-config";
 
 export function TeamShowcaseSection() {
@@ -31,7 +32,7 @@ export function TeamShowcaseSection() {
             className="group inline-flex items-center gap-2 text-sm font-semibold text-brand transition-colors hover:text-brand-hover"
           >
             <span>{m.team.viewFullTeam}</span>
-            <span className="transition-transform group-hover:translate-x-0.5" aria-hidden>→</span>
+            <ArrowRightIcon className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" aria-hidden />
           </Link>
         </div>
       </div>

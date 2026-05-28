@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/components/providers/language-provider";
 import { portfolio } from "@/lib/site-config";
+import { CheckIcon } from "@/components/ui/icons";
 
 const SCREENSHOTS: Record<string, string> = {
   "henley-zone": "/screenshots/henley-zone.png",
@@ -106,8 +107,8 @@ export function WorkDetailContent({ slug }: WorkDetailContentProps) {
                   key={result}
                   className="flex items-start gap-3 text-sm text-ink sm:text-base"
                 >
-                  <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand-soft text-xs font-semibold text-brand">
-                    ✓
+                  <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand-soft text-brand">
+                    <CheckIcon className="h-3 w-3" strokeWidth={2.4} />
                   </span>
                   {result}
                 </li>

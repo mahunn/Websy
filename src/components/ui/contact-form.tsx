@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useLanguage } from "@/components/providers/language-provider";
 
 const fieldBase =
-  "w-full rounded-xl border border-brand/15 bg-paper/40 px-3.5 py-2.5 text-sm text-ink placeholder-ink-faint backdrop-blur-sm transition-all focus:border-brand focus:bg-paper/70 focus:outline-none focus:ring-2 focus:ring-brand-ring disabled:opacity-50";
+  "w-full border-2 border-line bg-paper-surface px-4 py-3 text-sm text-ink placeholder-ink-faint transition-all focus:border-brand focus:outline-none disabled:opacity-50";
 
 export function ContactForm() {
   const { messages } = useLanguage();
@@ -60,10 +60,9 @@ export function ContactForm() {
 
   if (isSuccess) {
     return (
-      <div className="flex min-h-[420px] flex-col items-center justify-center rounded-2xl p-8 text-center glass">
+      <div className="flex min-h-[420px] flex-col items-center justify-center border-2 border-line bg-paper-surface p-8 text-center">
         <div className="relative mb-6">
-          <div className="absolute inset-0 animate-pulse rounded-full bg-brand-soft blur-xl" />
-          <div className="relative flex h-16 w-16 items-center justify-center rounded-full bg-brand-soft text-brand">
+          <div className="relative flex h-16 w-16 items-center justify-center border-2 border-brand bg-brand/10 text-brand">
             <svg
               className="h-8 w-8"
               fill="none"
@@ -88,7 +87,7 @@ export function ContactForm() {
         </p>
         <button
           onClick={() => setIsSuccess(false)}
-          className="mt-8 rounded-full border border-brand/15 bg-paper-alt px-6 py-2 text-sm font-medium text-ink backdrop-blur-sm transition-colors hover:bg-brand-soft"
+          className="mt-8 border-2 border-line bg-paper-alt px-6 py-2 text-sm font-bold text-ink transition-colors hover:bg-brand hover:text-white hover:border-brand"
         >
           {t.successBtn}
         </button>
@@ -97,7 +96,7 @@ export function ContactForm() {
   }
 
   return (
-    <div className="rounded-2xl p-6 glass md:p-8">
+    <div className="w-full">
       <form onSubmit={handleSubmit} className="space-y-5">
         <div className="space-y-2">
           <label
@@ -195,7 +194,7 @@ export function ContactForm() {
         </div>
 
         {error && (
-          <div className="rounded-xl border border-red-500/20 bg-red-500/10 px-3.5 py-3 text-xs text-red-400">
+          <div className="border-2 border-rose-600 bg-rose-50 px-3.5 py-3 text-xs font-bold text-rose-700">
             {error}
           </div>
         )}
@@ -203,7 +202,7 @@ export function ContactForm() {
         <button
           type="submit"
           disabled={isSubmitting}
-          className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-brand px-4 text-sm font-semibold text-white shadow-soft transition-all hover:bg-brand-hover hover:shadow-lift disabled:cursor-not-allowed disabled:opacity-60"
+          className="flex h-12 w-full items-center justify-center gap-2 border-2 border-brand bg-brand px-4 text-sm font-bold text-white transition-all duration-200 hover:bg-paper-surface hover:text-brand disabled:cursor-not-allowed disabled:opacity-60"
         >
           {isSubmitting ? (
             <>

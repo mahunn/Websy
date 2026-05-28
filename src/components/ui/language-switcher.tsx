@@ -9,7 +9,7 @@ export function LanguageSwitcher({ className }: { className?: string }) {
   return (
     <div
       className={cn(
-        "inline-flex items-center rounded-full border border-brand/10 bg-brand/[0.05] p-[3px] backdrop-blur-md",
+        "inline-flex items-center rounded-full border border-line bg-paper-surface/85 p-[3px] shadow-[0_1px_0_rgba(255,255,255,0.85)_inset] backdrop-blur-md",
         className
       )}
       role="radiogroup"
@@ -21,7 +21,7 @@ export function LanguageSwitcher({ className }: { className?: string }) {
         className={cn(
           "rounded-full px-2.5 py-1 text-[11px] font-semibold transition-all duration-200",
           locale === "en"
-            ? "bg-brand text-white shadow-sm"
+            ? "bg-brand text-white shadow-soft"
             : "text-ink-muted hover:text-ink"
         )}
         aria-pressed={locale === "en"}
@@ -34,7 +34,7 @@ export function LanguageSwitcher({ className }: { className?: string }) {
         className={cn(
           "rounded-full px-2.5 py-1 text-[11px] font-semibold transition-all duration-200",
           locale === "bn"
-            ? "bg-brand text-white shadow-sm"
+            ? "bg-brand text-white shadow-soft"
             : "text-ink-muted hover:text-ink"
         )}
         aria-pressed={locale === "bn"}

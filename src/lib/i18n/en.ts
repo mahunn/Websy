@@ -4,8 +4,9 @@ export const en: Messages = {
   locale: "en",
   site: {
     name: "Websy",
-    tagline: "We build your website.",
-    description: "Need a custom website? Websy builds ecommerce stores, business sites, and landing pages that actually convert."
+    tagline: "Websites that sell.",
+    description:
+      "High-performance digital products for businesses focused on revenue."
   },
   nav: {
     services: "Services",
@@ -14,7 +15,7 @@ export const en: Messages = {
     about: "About",
     contact: "Contact",
     email: "Email",
-    cta: "Get a Website"
+    cta: "Get a Quote"
   },
   lang: {
     switchToEn: "EN",
@@ -22,13 +23,14 @@ export const en: Messages = {
     label: "Language"
   },
   hero: {
-    badge: "Websy — Web Studio",
-    title: "Need a custom website for your business?",
-    titleHighlight: "custom website",
-    subtext: "We got you covered.",
-    ctaPrimary: "Let's Build It",
+    badge: "Conversion-focused web studio",
+    title: "Websites engineered to sell.",
+    titleHighlight: "sell",
+    subtext:
+      "High-performance digital products for businesses that care about revenue.",
+    ctaPrimary: "Start Your Project",
     ctaSecondary: "See Our Work",
-    previewServices: "What we do",
+    previewServices: "What we build",
     previewWork: "Our work",
     previewContact: "Talk to us",
     cardServices: "Ecommerce · Business · Landing pages",
@@ -36,8 +38,26 @@ export const en: Messages = {
     cardContact: "Let's start yours."
   },
   trust: {
-    line: "Trusted by businesses ready to grow online",
-    logos: ["Retail", "SaaS", "Local Business", "Ecommerce", "Startup", "Agency Partner"]
+    line: "Built for businesses ready to grow online",
+    logos: ["Retail", "SaaS", "Local Business", "Ecommerce", "Startup", "Agency Partner"],
+    pillars: [
+      {
+        headline: "Under 1s loads",
+        blurb: "Fast pages that score green on Core Web Vitals — better UX, better rankings."
+      },
+      {
+        headline: "Custom, not templates",
+        blurb: "Every site is designed around your brand, audience, and conversion goals."
+      },
+      {
+        headline: "Built to convert",
+        blurb: "Layouts, copy structure, and CTAs engineered for leads and sales."
+      },
+      {
+        headline: "SEO from day one",
+        blurb: "Technical foundation and content structure so Google can find you."
+      }
+    ]
   },
   valueProps: [
     {
@@ -53,10 +73,36 @@ export const en: Messages = {
       description: "Your site loads fast and works perfectly on every device."
     }
   ],
+  home: {
+    whyTitle: "Why",
+    whyTitleHighlight: "Websy",
+    whySubtitle: "Six reasons businesses choose us",
+    whyChips: [
+      "48h first draft",
+      "Custom design",
+      "Mobile-first",
+      "SEO built-in",
+      "WhatsApp support",
+      "Fixed pricing"
+    ],
+    servicesTitlePrefix: "Sites crafted for",
+    servicesTitleHighlight: "real outcomes",
+    processTitlePrefix: "From idea to live site in",
+    processTitleHighlight: "days, not months",
+    heroDraftStat: "48h",
+    heroDraftLabel: "First draft",
+    heroLaunchStat: "7d",
+    heroLaunchLabel: "Avg launch",
+    heroMockUrl: "yourbusiness.com",
+    heroMockHeadline: "Grow online with confidence",
+    heroMockCta: "Get started",
+    heroMockMetric: "+34% more leads after launch",
+    serviceChips: ["Ecommerce", "Landing Pages", "Business Sites", "Performance"]
+  },
   services: {
-    eyebrow: "What we do",
-    title: "We build websites that sell.",
-    description: "No templates. Custom-built for your business.",
+    eyebrow: "What we build",
+    title: "Websites engineered for growth.",
+    description: "No templates. Every project is custom-built for your business goals.",
     expansion: "Marketing, security, and content — coming soon as",
     expansionLink: "Websy grows",
     learnMore: "Learn more →",
@@ -64,21 +110,23 @@ export const en: Messages = {
     items: {
       ecommerce: {
         title: "Ecommerce Stores",
-        shortDescription: "Your online store — built to sell, not just to exist.",
-        description: "Product pages, cart, checkout, payment — everything your store needs to make money.",
-        idealFor: "Brands ready to start selling online.",
+        shortDescription: "Online stores built to sell — products, cart, checkout, payments.",
+        description:
+          "Product pages, cart, checkout, and payment flows designed to turn browsers into buyers.",
+        idealFor: "Brands ready to start or scale online sales.",
         deliverables: [
           "Product catalog & categories",
           "Mobile-friendly shopping",
           "Checkout & payment",
           "Easy content management",
-          "SEO-ready"
+          "SEO-ready structure"
         ]
       },
       business: {
         title: "Business Websites",
-        shortDescription: "Your business deserves a real website, not a template.",
-        description: "Professional site that builds trust and brings in leads.",
+        shortDescription: "Professional sites that build trust and generate leads.",
+        description:
+          "A credible web presence that explains what you do, why it matters, and how to get in touch.",
         idealFor: "Service businesses and local companies.",
         deliverables: [
           "Brand-matched design",
@@ -90,8 +138,9 @@ export const en: Messages = {
       },
       "landing-pages": {
         title: "Landing Pages",
-        shortDescription: "One page. One goal. Maximum conversions.",
-        description: "Stop wasting ad budget on bad pages. We build pages that convert.",
+        shortDescription: "Single-focus pages that turn ad traffic into customers.",
+        description:
+          "Stop wasting ad budget on weak pages. We build focused layouts that convert.",
         idealFor: "Businesses running Facebook or Google ads.",
         deliverables: [
           "Single-focus layout",
@@ -103,8 +152,8 @@ export const en: Messages = {
       },
       performance: {
         title: "Speed Optimization",
-        shortDescription: "Slow site? We fix that.",
-        description: "We find what's slowing you down and fix it.",
+        shortDescription: "Faster pages, better rankings, happier users.",
+        description: "We audit what's slowing you down and fix it — images, code, hosting, vitals.",
         idealFor: "Sites that feel slow or rank poorly on Google.",
         deliverables: [
           "Full performance audit",
@@ -118,8 +167,8 @@ export const en: Messages = {
   },
   portfolio: {
     eyebrow: "Our work",
-    title: "We built these.",
-    description: "Real projects. Real businesses. Real results.",
+    title: "Projects that drive results.",
+    description: "Real businesses. Real websites. Measurable outcomes.",
     viewAll: "See all work",
     viewCase: "View project →",
     liveSite: "Live site ↗",
@@ -152,55 +201,55 @@ export const en: Messages = {
   },
   process: {
     eyebrow: "How it works",
-    title: "4 steps. That's it.",
-    description: "Simple, clear, no surprises.",
-    viewAll: "See full process",
+    title: "4 steps. Clear timeline. No surprises.",
+    description: "Simple process from first message to live site.",
+    viewAll: "Full process",
     items: [
       {
-        title: "We talk",
-        description: "You tell us what you need.",
+        title: "Tell us your goals",
+        description: "Quick form or WhatsApp — we reply within 2 hours.",
         detail: "Goals, audience, features — we figure it out together."
       },
       {
-        title: "We design",
-        description: "You see it before we build it.",
-        detail: "Wireframes and mockups — approved by you first."
+        title: "We design your strategy",
+        description: "Research your market and map what converts.",
+        detail: "Wireframes and direction — approved by you first."
       },
       {
-        title: "We build",
-        description: "Clean code. Regular updates.",
-        detail: "You'll know exactly where your project stands."
+        title: "First draft in 48 hours",
+        description: "A real, clickable design you can react to fast.",
+        detail: "We iterate quickly on your feedback."
       },
       {
-        title: "We launch",
-        description: "Your site goes live.",
-        detail: "Tested, deployed, handed off — ready to grow."
+        title: "Launch & support",
+        description: "Go live, hand over files, stay reachable.",
+        detail: "Tested, deployed, ready to grow your business."
       }
     ]
   },
   about: {
-    heroTitle: "We're Websy. We build websites.",
-    heroDesc: "No fluff. Just a team that builds what your business needs.",
+    heroTitle: "We're Websy. We build websites that grow businesses.",
+    heroDesc: "A focused web studio — no fluff, just results-driven work.",
     ctaPrimary: "Work with us",
     ctaSecondary: "Meet the team",
     paragraphs: [
-      "Websy is a web studio founded by Mahin. We help businesses grow online.",
-      "Ecommerce stores, business sites, landing pages — we build what converts.",
-      "We work like a product team. Clear roles. Real accountability."
+      "Websy is a web studio founded by Mahin. We help businesses grow online with sites that convert.",
+      "Ecommerce stores, business sites, landing pages — custom-built for your goals.",
+      "We work like a product team: clear roles, defined process, real accountability."
     ],
     founderTitle: "Founder",
     founderRole: "Founder & Full Stack Developer",
     founderBio: "Mahin builds the websites, leads the tech, and makes sure everything works.",
     viewTeam: "Meet the team →",
-    expansionTitle: "Coming soon",
-    expansionDesc: "Marketing, security, and content — expanding our services."
+    expansionTitle: "Growing with you",
+    expansionDesc: "Marketing, security, and content — expanding our services as Websy scales."
   },
   team: {
     heroTitle: "A real team. Not a freelance gig.",
-    heroDesc: "Everyone has a role. Everyone is accountable.",
+    heroDesc: "Defined roles. Clear process. Everyone accountable.",
     cta: "Start a project",
     learningPhase: "Learning phase",
-    footerNote: "Web engineering, marketing, security, and content — all under one roof.",
+    footerNote: "Web engineering, marketing, security, and content — under one roof.",
     members: {
       "Mahin Ahmad": {
         role: "Founder & Lead Developer",
@@ -219,13 +268,13 @@ export const en: Messages = {
         description: "Copywriting · Brand voice · Client relations"
       }
     },
-    homepageTitle: "The specialized team behind your project",
-    homepageDesc: "Everyone has a role. Everyone delivers.",
+    homepageTitle: "The team behind your project",
+    homepageDesc: "Specialists in dev, marketing, security, and content — working as one unit.",
     viewFullTeam: "Meet the team →"
   },
   contact: {
     heroTitle: "Let's build yours.",
-    heroDesc: "Tell us what you need. We'll handle the rest.",
+    heroDesc: "Tell us what you need. We'll reply with a clear plan and quote.",
     whatsappTitle: "WhatsApp",
     whatsappDesc: "Fastest way to reach us.",
     whatsappCta: "Open WhatsApp →",
@@ -247,7 +296,7 @@ export const en: Messages = {
       },
       {
         question: "Support after launch?",
-        answer: "Yes — maintenance, updates, and monitoring."
+        answer: "Yes — maintenance, updates, and monitoring available."
       },
       {
         question: "Can I use my own domain?",
@@ -255,7 +304,7 @@ export const en: Messages = {
       },
       {
         question: "Why not just hire a freelancer?",
-        answer: "We're a team. Defined roles, clear process, real accountability."
+        answer: "We're a team with defined roles, clear process, and real accountability."
       }
     ],
     form: {
@@ -274,20 +323,25 @@ export const en: Messages = {
       },
       messageLabel: "What do you need?",
       messagePlaceholder: "Your goals, features, timeline...",
-      submitBtn: "Send",
+      submitBtn: "Send Message",
       submittingBtn: "Sending...",
-      successTitle: "Sent!",
+      successTitle: "Message sent!",
       successDesc: "We'll get back to you within a few hours.",
       successBtn: "Send another",
-      validationError: "Fill in all fields.",
+      validationError: "Please fill in all fields.",
       serverError: "Something went wrong. Try WhatsApp instead."
     }
   },
   cta: {
-    eyebrow: "Ready?",
-    title: "Let's build your website.",
-    description: "Tell us what you need — we'll make it happen.",
+    eyebrow: "Start your project",
+    title: "Get a clear plan and quote",
+    titleHighlight: "today",
+    description:
+      "Tell us what you need. We'll evaluate your goals and reply within 2 hours with a straightforward timeline and pricing.",
+    nudges: ["First draft in 48 hours", "Reply within 2 hours", "No commitment required"],
     whatsapp: "WhatsApp",
+    whatsappBtn: "WhatsApp Us",
+    emailBtn: "Send an Email",
     startProject: "Start a Project",
     orEmail: "Or email us at"
   },

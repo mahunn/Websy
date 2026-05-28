@@ -30,7 +30,7 @@ export function WebsyMark({ className }: { className?: string }) {
         strokeLinecap="round"
         strokeLinejoin="round"
       />
-      <circle cx={W_DOT.cx} cy={W_DOT.cy} r={W_DOT.r} fill="#9046FF" />
+      <circle cx={W_DOT.cx} cy={W_DOT.cy} r={W_DOT.r} fill="#0F766E" />
     </svg>
   );
 }
@@ -72,7 +72,7 @@ export function WebsyWordmark({
         strokeLinecap="round"
         strokeLinejoin="round"
       />
-      <circle cx={W_DOT.cx} cy={W_DOT.cy} r={W_DOT.r} fill="#9046FF" />
+      <circle cx={W_DOT.cx} cy={W_DOT.cy} r={W_DOT.r} fill="#0F766E" />
       <text
         x="20.5"
         y="22"

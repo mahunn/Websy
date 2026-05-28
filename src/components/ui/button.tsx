@@ -2,7 +2,7 @@ import Link from "next/link";
 import { cn } from "@/lib/cn";
 
 type ButtonVariant = "primary" | "secondary" | "ghost";
-type ButtonSize = "default" | "sm";
+type ButtonSize = "default" | "sm" | "lg";
 
 type BaseProps = {
   variant?: ButtonVariant;
@@ -19,27 +19,30 @@ type ButtonAsLink = BaseProps &
 
 const variants: Record<ButtonVariant, string> = {
   primary: [
-    "bg-gradient-to-r from-[#9046FF] to-[#7C35EB] text-white font-bold",
-    "border border-[#9046FF]/20",
-    "shadow-[0_4px_20px_rgba(144,70,255,0.30),inset_0_1px_0_rgba(255,255,255,0.2)]",
-    "hover:from-[#7C35EB] hover:to-[#682FD0] hover:shadow-[0_6px_28px_rgba(144,70,255,0.45)]",
+    "bg-brand text-white font-semibold",
+    "border border-brand/20",
+    "shadow-[0_1px_0_rgba(255,255,255,0.15)_inset,0_8px_22px_-6px_rgba(15,118,110,0.45)]",
+    "hover:bg-brand-hover hover:shadow-[0_12px_28px_-8px_rgba(15,118,110,0.55)]",
+    "active:translate-y-px",
   ].join(" "),
   secondary: [
-    "bg-brand-soft text-brand font-semibold",
-    "border border-brand/12",
-    "shadow-[0_4px_16px_rgba(144,70,255,0.06),inset_0_1px_0_rgba(255,255,255,0.05)]",
-    "hover:bg-brand/[0.14] hover:shadow-[0_6px_24px_rgba(144,70,255,0.12)]",
+    "bg-paper-surface text-ink font-semibold",
+    "border border-line",
+    "shadow-soft",
+    "hover:border-brand/25 hover:text-brand hover:shadow-premium",
+    "active:translate-y-px",
   ].join(" "),
   ghost: [
-    "bg-paper-surface text-ink-muted font-medium",
-    "border border-line",
+    "bg-transparent text-ink-muted font-medium",
+    "border border-transparent",
     "hover:bg-paper-alt hover:text-ink",
   ].join(" "),
 };
 
 const sizes: Record<ButtonSize, string> = {
-  default: "h-12 px-7 text-sm tracking-tight",
+  default: "h-11 px-6 text-sm",
   sm: "h-9 px-5 text-sm",
+  lg: "h-12 px-8 text-[15px]",
 };
 
 export function Button({
@@ -51,8 +54,8 @@ export function Button({
   ...props
 }: ButtonAsButton | ButtonAsLink) {
   const classes = cn(
-    "inline-flex items-center justify-center gap-2 rounded-full transition-all duration-200",
-    "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-ring focus-visible:ring-offset-2",
+    "group inline-flex items-center justify-center gap-2 rounded-full transition-all duration-250",
+    "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-ring focus-visible:ring-offset-2 focus-visible:ring-offset-paper",
     variants[variant],
     sizes[size],
     className
@@ -74,22 +77,14 @@ export function Button({
       );
     }
     return (
-      <Link
-        href={href}
-        className={classes}
-        {...(props as React.AnchorHTMLAttributes<HTMLAnchorElement>)}
-      >
+      <Link href={href} className={classes} {...(props as React.AnchorHTMLAttributes<HTMLAnchorElement>)}>
         {children}
       </Link>
     );
   }
 
   return (
-    <button
-      className={classes}
-      type="button"
-      {...(props as React.ButtonHTMLAttributes<HTMLButtonElement>)}
-    >
+    <button className={classes} type="button" {...(props as React.ButtonHTMLAttributes<HTMLButtonElement>)}>
       {children}
     </button>
   );

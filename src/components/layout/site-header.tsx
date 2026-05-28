@@ -58,12 +58,18 @@ export function SiteHeader() {
                   href={link.href}
                   prefetch
                   className={cn(
-                    "rounded-xl px-3 py-1.5 text-xs font-semibold uppercase tracking-wider transition-all duration-150",
+                    "relative rounded-xl px-3.5 py-2 text-[12px] font-semibold tracking-wide transition-all duration-200",
                     active
-                      ? "border border-brand/12 bg-brand/[0.07] text-brand shadow-sm"
-                      : "text-ink-muted hover:bg-brand/[0.04] hover:text-ink"
+                      ? "text-brand"
+                      : "text-ink-muted hover:text-ink"
                   )}
                 >
+                  {active && (
+                    <span
+                      aria-hidden
+                      className="absolute inset-0 -z-[1] rounded-xl border border-brand/15 bg-brand/[0.06] shadow-[0_1px_0_rgba(255,255,255,0.7)_inset]"
+                    />
+                  )}
                   {link.label}
                 </Link>
               );

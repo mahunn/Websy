@@ -1,5 +1,5 @@
 <svg viewBox="0 -3 68 30" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Websy" preserveAspectRatio="xMinYMid meet">
-  <path d="M0 12.5 L4.4 22 L9.4 14.5 L14.4 22 L18.8 8" stroke="#0F172A" stroke-width="2.35" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-  <circle cx="18.8" cy="8" r="1.85" fill="#E11D1D"/>
-  <text x="20.5" y="22" fill="#0F172A" font-family="Inter, system-ui, sans-serif" font-size="17.5" font-weight="600" letter-spacing="-0.045em">ebsy</text>
+  <path d="M0 12.5 L4.4 22 L9.4 14.5 L14.4 22 L18.8 8" stroke="#1C1917" stroke-width="2.35" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <circle cx="18.8" cy="8" r="1.85" fill="#0F766E"/>
+  <text x="20.5" y="22" fill="#1C1917" font-family="Inter, system-ui, sans-serif" font-size="17.5" font-weight="600" letter-spacing="-0.045em">ebsy</text>
 </svg>

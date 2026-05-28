@@ -44,8 +44,31 @@ export type Messages = {
     cardWork: string;
     cardContact: string;
   };
-  trust: { line: string; logos: string[] };
+  trust: {
+    line: string;
+    logos: string[];
+    pillars: { headline: string; blurb: string }[];
+  };
   valueProps: { title: string; description: string }[];
+  home: {
+    whyTitle: string;
+    whyTitleHighlight: string;
+    whySubtitle: string;
+    whyChips: string[];
+    servicesTitlePrefix: string;
+    servicesTitleHighlight: string;
+    processTitlePrefix: string;
+    processTitleHighlight: string;
+    heroDraftStat: string;
+    heroDraftLabel: string;
+    heroLaunchStat: string;
+    heroLaunchLabel: string;
+    heroMockUrl: string;
+    heroMockHeadline: string;
+    heroMockCta: string;
+    heroMockMetric: string;
+    serviceChips: string[];
+  };
   services: {
     eyebrow: string;
     title: string;
@@ -138,8 +161,12 @@ export type Messages = {
   cta: {
     eyebrow: string;
     title: string;
+    titleHighlight: string;
     description: string;
+    nudges: string[];
     whatsapp: string;
+    whatsappBtn: string;
+    emailBtn: string;
     startProject: string;
     orEmail: string;
   };
